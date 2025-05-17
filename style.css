@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fc;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px 30px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input, button, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0055aa;
+}
+
+.customer-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 16px;
+  animation: fadeIn 0.5s ease;
+}
+
+.paid { color: green; font-weight: bold; }
+.unpaid { color: red; font-weight: bold; }
+
+#clear-paid-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.clear-paid {
+  background-color: crimson;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.customer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.customer-actions button {
+  padding: 6px 12px;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.customer-actions a {
+  text-decoration: none;
+}
+.card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.card-info {
+  flex: 1;
+}
+
+.customer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.customer-actions button {
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Color-coded buttons */
+.mark-paid {
+  background-color: green;
+}
+
+.whatsapp-btn {
+  background-color: #25D366; /* WhatsApp green */
+}
+
+.edit-btn {
+  background-color: orange;
+}
+
+.delete-btn {
+  background-color: crimson;
+}
+

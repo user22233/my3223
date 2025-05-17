@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#007bff">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Credit Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">📘 Smart Credit Manager</div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="help.html">Help</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <input type="text" id="search" placeholder="🔍 Search by name...">
+
+    <!-- ✅ Filter by Status Dropdown -->
+    <div class="filter-container">
+      <label for="filter-status">🔍 Filter by Status:</label>
+      <select id="filter-status">
+        <option value="all">Show All</option>
+        <option value="unpaid">Unpaid Only</option>
+        <option value="paid">Paid Only</option>
+      </select>
+    </div>
+
+    <form id="customer-form">
+      <input type="text" name="name" placeholder="👤 Customer Name" required>
+      <input type="text" name="phone" placeholder="📞 Phone Number">
+      <input type="number" name="amount" placeholder="💰 Amount" required>
+      <input type="text" name="note" placeholder="📝 Note (optional)">
+      <label for="date">📅 Credit Taken On:</label>
+      <input type="date" name="date" id="date">
+      <label for="due">⏰ Due Date (optional):</label>
+      <input type="date" name="due" id="due">
+      <button type="submit">➕ Add Entry</button>
+    </form>
+
+    <div id="customer-list"></div>
+
+    <div id="clear-paid-container">
+      <button onclick="clearPaidEntries()" class="clear-paid">🧹 Clear All Paid Entries</button>
+    </div>
+
+    <hr>
+
+    <h3>🔁 Backup / Restore</h3>
+    <button onclick="downloadBackup()">⬇️ Download Backup</button>
+    <input type="file" id="upload-file" accept=".json">
+  </main>
+
+  <script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('✅ Service Worker registered'))
+        .catch(err => console.error('❌ Service Worker registration failed:', err));
+    });
+  }
+</script>
+
+</body>
+</html>
